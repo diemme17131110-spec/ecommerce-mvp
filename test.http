@@ -1,0 +1,121 @@
+### HEALTH
+GET http://localhost:3000/health
+
+### REGISTER
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "mydemo",
+  "fullname": "My Demo",
+  "password": "123456"
+}
+
+### LOGIN
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "mydemo",
+  "password": "123456"
+}
+### PROFILE
+GET http://localhost:3000/api/profile
+Authorization: Bearer "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsInVzZXJuYW1lIjoibXlkZW1vIiwiaWF0IjoxNzkwNTIwMzgyLCJleHAiOjE3OTA1MjM5ODJ9.hQLrIaz5pm3lrcK4syl2cgfq1NLBq9D_kXdxUKqcs-w"
+
+### PROFILE NO TOKEN
+GET http://localhost:3000/api/profile
+
+### GET ALL PRODUCTS
+GET http://localhost:3000/api/products
+
+###
+
+### GET PRODUCT BY ID
+GET http://localhost:3000/api/products/1
+
+###
+
+### CREATE PRODUCT
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "pname":"Laptop Dell",
+  "price":15000000,
+  "quantity":10
+}
+
+###
+
+### UPDATE PRODUCT
+PUT http://localhost:3000/api/products/1
+Content-Type: application/json
+
+{
+  "pname":"Laptop Dell",
+  "price":14500000,
+  "quantity":20
+}
+
+###
+
+### DELETE PRODUCT
+DELETE http://localhost:3000/api/products/1
+
+
+### CREATE ORDER
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+  "uid": 1,
+  "items": [
+    {
+      "pid": 1,
+      "qty": 2,
+      "unit_price": 14500000
+    },
+    {
+      "pid": 2,
+      "qty": 1,
+      "unit_price": 28000000
+    }
+  ]
+}
+
+###
+
+### GET ALL ORDERS
+GET http://localhost:3000/api/orders
+
+###
+
+### GET ORDER BY ID
+GET http://localhost:3000/api/orders/1
+
+
+
+### CREATE SHIPMENT
+POST http://localhost:3000/api/shipments
+Content-Type: application/json
+
+{
+  "oid":1,
+  "status":"Preparing"
+}
+
+###
+
+### UPDATE SHIPMENT
+PUT http://localhost:3000/api/shipments/1
+Content-Type: application/json
+
+{
+  "status":"Shipping"
+}
+
+###
+
+### GET SHIPMENTS
+GET http://localhost:3000/api/shipments
